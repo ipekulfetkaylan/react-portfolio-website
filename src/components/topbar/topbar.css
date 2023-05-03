@@ -1,0 +1,24 @@
+.topbar {
+  width: 100%;
+  background-color: #F6F1F1;
+  color: #394867;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.topbar .wrapper {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topbar .wrapper .left .logo {
+  font-size: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+.topbar .wrapper .left b {
+  font-size: 60px;
+}/*# sourceMappingURL=topbar.css.map */
