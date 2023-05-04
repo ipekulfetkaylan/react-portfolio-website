@@ -12,7 +12,7 @@ export default function Intro() {
        backDelay: 1500,
        strings: ["Developer", "Content Creator"]
       });
-  }, []);
+  }, [ ]);
 
   return (
     <div className="intro" id="intro">
