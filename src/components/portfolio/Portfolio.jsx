@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
+import {
+  contentPortfolio,
+  designPortfolio,
+  featuredPortfolio,
+  mobilePortfolio,
+  webPortfolio,
+} from "../../data";
 
 export default function Portfolio() {
   const [selected, setSelected] = useState("featured");
+  const [data, setData] = useState([]);
   const list = [
     {
       id: "featured",
@@ -22,10 +30,30 @@ export default function Portfolio() {
       title: "Design",
     },
     {
-      id: "branding",
-      title: "Branding",
+      id: "content",
+      title: "Content",
     },
   ];
+  useEffect(() => {
+    switch (selected) {
+      case "featured":
+        setData(featuredPortfolio);
+        break;
+      case "webApp":
+        setData(webPortfolio);
+        break;
+      case "mobileApp":
+        setData(mobilePortfolio);
+        break;
+      case "design":
+        setData(designPortfolio);
+        break;
+      case "content":
+        setData(contentPortfolio);
+        break;
+    }
+  }, [selected]);
+  //selected a bağlı olarak değiştiğinde hangi seçenek seçildiyse o seçeneğin içeriğini getiriyor
   return (
     <div className="portfolio" id="portfolio">
       <h1>Portfolio</h1>
@@ -42,18 +70,12 @@ export default function Portfolio() {
         })}
       </ul>
       <div className="container">
-        <div className="item">
-          <img src="assets/bankApp.webp" alt="" />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img src="assets/bankApp.webp" alt="" />
-          <h3>Banking App</h3>
-        </div>
-        <div className="item">
-          <img src="assets/bankApp.webp" alt="" />
-          <h3>Banking App</h3>
-        </div>
+        {data.map((item) => {
+          return <div className="item" key={item.id} >
+            <img src={item.img} alt="" />
+            <h3>{item.title}</h3>
+          </div>;
+        })}
       </div>
     </div>
   );
