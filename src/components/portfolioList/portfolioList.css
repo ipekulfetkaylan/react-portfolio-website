@@ -1,0 +1,11 @@
+li {
+  font-size: 18px;
+  margin-right: 5px;
+  padding: 7px;
+  cursor: pointer;
+}
+li.active {
+  background-color: #394867;
+  color: #F6F1F1;
+  border-radius: 10px;
+}/*# sourceMappingURL=portfolioList.css.map */
