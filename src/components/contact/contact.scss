@@ -3,6 +3,9 @@
 .contact{
     background-color:$secondColor;
     display: flex;
+    @include mobile{
+        flex-direction: column;
+    }
     .left{
         flex: 1;
         overflow: hidden;
@@ -31,12 +34,20 @@
                 height: 30px;
                 font-size: 14px;
                 padding-left: 10px;
+                @include mobile{
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
             }
             textarea{
                 width: 300px;
                 height: 200px;
                 font-size: 14px;
                 padding-left: 10px;
+                @include mobile{
+                    width: 100%;
+                    height: 100px;
+                }
             }
             button{
                 width: 200px;
@@ -49,6 +60,10 @@
                 font-size: 18px;
                 cursor: pointer;
                 outline: none;
+                @include mobile{
+                    margin-top: 20px;
+                    font-size: 14px;
+                }
             }
         }
         span{

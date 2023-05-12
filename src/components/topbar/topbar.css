@@ -28,16 +28,21 @@
 .topbar .wrapper .left b {
   font-size: 60px;
 }
-.topbar .wrapper .left .temContainer {
+.topbar .wrapper .left .itemContainer {
   display: flex;
   align-items: center;
   margin-left: 40px;
 }
-.topbar .wrapper .left .temContainer .icon {
+@media (max-width: 768px) {
+  .topbar .wrapper .left .itemContainer {
+    display: none;
+  }
+}
+.topbar .wrapper .left .itemContainer .icon {
   font-size: 20px;
   margin-right: 5px;
 }
-.topbar .wrapper .left .temContainer span {
+.topbar .wrapper .left .itemContainer span {
   font-size: 15px;
   font-weight: 500;
 }
